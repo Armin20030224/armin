@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="hu">
-    <head>
-        <link rel="stylesheet" href="./style/css/styles.css">
-        
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">szeretném,ha együtt lennénk,akarsz a barátnőm lenni kicsike?</h1>
-            </div>
-            <div class="gif_container">
-                <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Cute animated illustration">
-            </div>
-            <div class = "buttons">
-                <button class="btn" id = "igenButton" onclick="nextPage()">igen</button>
-                <button class="btn" id="nemButton" onmouseover="moveButton()">nem</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "igen.html";
-                    }
-                    
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('nemButton').offsetWidth);
-                        var y = Math.random() * (window.innerHeight - document.getElementById('nemButton').offsetHeight);
-                        document.getElementById('nemButton').style.left = `${x}px`;
-                        document.getElementById('nemButton').style.top = `${y}px`;
-                    }
-                </script> 
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesz-e barátnőm?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff99cc; /* Rózsaszín háttérszín */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cute-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question">
+            <p>Azt akarom, hogy együtt legyünk! Akarsz a barátnőm lenni?</p>
         </div>
-       
-    </body> 
+        <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Cute animated illustration" class="cute-image">
+        <button class="btn" onclick="nextPage()">Igen</button>
+
+        <script>
+            function nextPage() {
+                window.location.href = "valasz-oldal.html"; // Cseréld le a céloldal nevére vagy elérési útvonalára
+            }
+        </script>
+    </div>
+</body>
 </html>
